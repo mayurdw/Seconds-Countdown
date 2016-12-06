@@ -7,7 +7,7 @@ document.getElementById("area").value = " ";
 }
 //To count to zero
 function startCount() {
-  if(numberValue.value > 0) {
+  if(numberValue.value > 1) {
     numberValue.value--;
   } else{
   clearInterval(intervalHandle);
