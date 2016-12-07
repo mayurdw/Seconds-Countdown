@@ -1,6 +1,8 @@
 //global variables
 var numberValue = document.getElementById("area");
 var intervalHandle;
+var numPad = [document.getElementById("buttons"), document.getElementById("two"), document.getElementById("three")];
+console.log(numPad);
 
 //To ensure that textbox is null when start
 function startUp() {
@@ -17,17 +19,21 @@ function startCount() {
   startUp();
   }
 }
-function buttonTransfer() {
-  var buttonNum = document.getElementById("buttons");
-  numberValue.value = numberValue.value + buttonNum.innerHTML;
-  console.log(buttonNum.innerHTML);
 
+function buttonTransfer(array) {
+  var buttonNum = document.getElementById("buttons");
+  numberValue.value = numberValue.value + buttonNum.value;
+  console.log(buttonNum.value);
 }
+
 //main program
 startUp();
-document.getElementById("buttons").onclick = function(){
-  buttonTransfer();
+for (var i = 0; i < numPad.length; i++) {
+  console.log(numPad[i].value);
+numPad[i].onclick = function(){
+  buttonTransfer(numPad[i]);
 };
+}
 document.getElementById("start").onclick = function(){
   if(isNaN(numberValue.value)){
     alert("enter number only!");
