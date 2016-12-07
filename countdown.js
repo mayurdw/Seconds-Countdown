@@ -19,7 +19,7 @@ function startCount() {
 }
 function buttonTransfer() {
   var buttonNum = document.getElementById("buttons");
-  numberValue.value = buttonNum.innerHTML;
+  numberValue.value = numberValue.value + buttonNum.innerHTML;
   console.log(buttonNum.innerHTML);
 
 }
